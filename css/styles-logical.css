@@ -1,0 +1,289 @@
+@font-face {
+  /* Como se va a llamar */
+  font-family: charter;
+  /* Donde esta ubicada */
+  src: url('../fonts/charter-regular.otf');
+  /* El estilo de la fuente */
+  font-style: normal;
+  /* El peso */
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-italic.otf');
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-bold.otf');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-bold-italic.otf');
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Utilizando variables con el elemento root */
+:root{
+  --white30: #3A3539;
+  --white20: #A5A3A5;
+  --white10: #616161;
+}
+/* em toma como referencia el tamanano del elemento padre\ */
+/* El rem toma como referencia el tamano del elemeto root  */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  /* en hexadecimal los numeros se cuentan hasta 16 primero van del 0 al 9 luego de la a hasta la f y da un total de 16 rgb los ultimos dos numeros es el canal alpha o de transparencia*/
+ /* color: #212121ff; */
+
+ /* Aqui van hasta e 255 */
+ /* font-family: charter; */
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Nunito', sans-serif;
+  background: #251F24;
+  color: white;
+  margin: 0;
+}
+
+a {
+  color: var(--gray30);
+}
+h1,h3{
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 40px;
+  margin-block-start: 20px;
+  margin-block-end: 16px;
+}
+
+h2 {
+  font-size: 2em;
+  margin-block: 40;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-block: 16px;
+}
+
+p {
+  color: var(--white20);
+}
+
+hr{
+  margin-block: 40px;
+  border: 1px solid rgba(97, 97, 97, 0.2);
+}
+
+header {
+
+}
+
+.header-content{
+  padding-inline: 20px;
+  padding-block-start: 20px;
+}
+header a {
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--gray10);
+}
+
+header a:hover{
+  color: var(--gray30);
+}
+
+nav details summary {
+  color: var(--gray30);
+  font-weight: bold;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+nav details ol li{
+  color: var(--white20);
+  margin-bottom: 16px;
+}
+
+pre {
+  background-color: var(--white30);
+  padding: 40px;
+  font-size: 16px;
+  line-height: 24px;
+  overflow: auto;
+  border: 8px solid #5551FF;
+  box-shadow: -10px 10px 0 0 #ABAAF6;
+  margin-block-end: 40px;
+  border-radius: 9px;
+}
+
+.hero{
+  inline-size: 100%;
+  block-size: 50px;
+  background-image: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
+  /* background-repeat: no-repeat;
+  background-position: right bottom; */
+}
+
+.section-content {
+  counter-reset: titleList;
+}
+
+.section-content img {
+  margin-block-start: 40px;
+  display: block;
+}
+
+.section-content h3{
+  counter-increment: titleList;
+}
+
+  .section-content h3::before {
+  content: counter(titleList, decimal)'. ';
+}
+
+
+
+
+/* ::selection {
+  background-color: red;
+  color: white;
+} */
+
+
+blockquote{
+  margin-block-start: 80px;
+  margin-block-start: 63px;
+  background-color: var(--white30);
+  font-size: 24px;
+  padding-inline-end: 24px;
+  padding-inline-start: 24px;
+  padding-block-start: 24px;
+  padding-block-end: 24px;
+  border-radius: 8px;
+  line-height: 32px;
+}
+
+blockquote p {
+  color: #ffffff;
+}
+
+.main hr {
+  display: none;
+}
+.main{
+}
+
+.main .wrapper{
+  max-inline-size: 902px;
+  margin: 0 auto;
+}
+
+.main .content{
+  padding-inline: 16px;
+}
+.main .section-content .img-big {
+  width: 100%;
+}
+
+.slider {
+}
+
+.slider-container {
+  /* border: 1px solid purple; */
+  /* block-size: 100px; */
+  display: block;
+  overflow: auto;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  font-size: 0;
+}
+
+.video {
+  margin: 0;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+.slider-bullet-list{
+  text-align: center;
+  margin-block-start: 10px;
+}
+
+.slider-bullet{
+  display: inline-block;
+  background-color: var(--white20);
+  inline-size: 15px;
+  block-size: 15px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.form input{
+  inline-size: 100%;
+  background-color: transparent;
+  box-sizing: border-box;
+  border: 1px solid white;
+  padding-inline: 16px;
+  padding-block: 12px;
+  border-radius: 8px;
+  margin-block-end: 20px;
+  outline: none;
+  color: var(--white20);
+  font-size: 16px;
+  line-height: 24px;
+  display: block;
+}
+
+.form input::-webkit-input-placeholder{
+  color: var(--white20);
+}
+
+.form input[type=submit]{
+background-color: #157EFB;
+border: none;
+color: white;
+font-weight: bold;
+}
+
+@media screen and (min-width: 1366px) {
+  .header{
+    position: sticky;
+    inset-block-start: 0;
+  }
+
+  .header-content{
+    position: relative;
+  }
+
+  header {
+    font-size: 14px;
+    color: white;
+    position: absolute;
+    inset-block-start: 45px;
+    inline-size: 188px;
+    inset-inline-start: 28px;
+  }
+
+  .hero{
+    block-size: 350px;
+  }
+
+  h1{
+    margin-block-start: 64px;
+    font-size: 60px;
+  }
+}

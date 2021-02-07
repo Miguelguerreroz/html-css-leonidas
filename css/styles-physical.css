@@ -1,0 +1,235 @@
+@font-face {
+  /* Como se va a llamar */
+  font-family: charter;
+  /* Donde esta ubicada */
+  src: url('../fonts/charter-regular.otf');
+  /* El estilo de la fuente */
+  font-style: normal;
+  /* El peso */
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-italic.otf');
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-bold.otf');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-bold-italic.otf');
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Utilizando variables con el elemento root */
+:root{
+  --gray30: #212121;
+  --gray20: #212429;
+  --gray10: #616161;
+}
+/* em toma como referencia el tamanano del elemento padre\ */
+/* El rem toma como referencia el tamano del elemeto root  */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  /* en hexadecimal los numeros se cuentan hasta 16 primero van del 0 al 9 luego de la a hasta la f y da un total de 16 rgb los ultimos dos numeros es el canal alpha o de transparencia*/
+ /* color: #212121ff; */
+
+ /* Aqui van hasta e 255 */
+ color: var(--gray30);
+ /* font-family: charter; */
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+a {
+  color: var(--gray30);
+}
+
+h1 {
+  font-size: 60px;
+  margin: 64px 0;
+  font-weight: 400;
+}
+
+hr {
+  border: 1px solid var(--gray10) ;
+  margin: 64px 0;
+
+}
+
+h2 {
+  font-size: 2em;
+  margin: 64px 0 40px;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin: 16px 0 24px;
+  font-weight: normal;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+.main{
+
+}
+
+
+.wrapper{
+  width: 902px;
+  margin: auto;
+}
+
+.content{
+  background-color: white;
+  padding: 20px;
+}
+
+.header-content{
+  position: relative;
+}
+
+header {
+  /* --gray30: red; */
+  font-size: 14px;
+  color: #616161;
+  position: absolute;
+  z-index: 2;
+  width: 208px;
+  left: -238px;
+  top: 64px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+}
+
+header li {
+  margin-bottom: 16px;
+}
+
+header a {
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--gray10);
+}
+
+header a:hover{
+  color: var(--gray30);
+}
+
+nav details summary {
+  color: var(--gray30);
+  font-weight: bold;
+  line-height: 24px;
+}
+
+blockquote {
+  margin: 32px 0;
+  padding-left: 16px;
+  font-size: 24px;
+  border-left: 4px solid var(--gray20);
+  line-height: 24px;
+  position: relative;
+}
+
+blockquote span {
+  color: var(--gray10);
+}
+
+blockquote span::before {
+  content: '-';
+}
+
+.debug {
+  /* border: 1px solid red !important ; */
+  /* outline: 4px solid blue; */
+  box-shadow: inset 0 0 0 10px red;
+  box-sizing: border-box;
+}
+
+pre {
+  background-color: #FEC62E;
+  padding: 40px;
+}
+
+.hero{
+  width: 100%;
+  height: 350px;
+  background-image: linear-gradient( to top, rgba(255, 255, 255, 0.3), transparent, transparent ), url('../img/pattern.png');
+  /* background-repeat: no-repeat;
+  background-position: right bottom; */
+}
+
+.section-content{
+  margin-top: 164px;
+  position: relative;
+}
+.section-content:first-child{
+  margin-top: 0;
+}
+
+.section-content ol li {
+  line-height: 24px;
+}
+
+.section-content ul li {
+  margin-bottom: 16px;
+}
+
+.section-content + hr {
+  display: none;
+}
+
+.section-content img{
+  margin-top: 40px;
+}
+
+.section-content {
+  counter-reset: titleList;
+}
+
+.section-content h3{
+  counter-increment: titleList;
+  padding-bottom: 8px;
+  position: relative;
+}
+
+  .section-content h3::before {
+  content: counter(titleList, decimal) ". ";
+}
+
+  .section-content h3::after {
+  content: '';
+  display: inline-block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--gray30);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+
+/* ::selection {
+  background-color: red;
+  color: white;
+} */
+
+.img-dom{
+  width: 100%;
+}
